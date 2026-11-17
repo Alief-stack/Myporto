@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Profesional — Web Developer & UI/UX Designer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <!-- File CSS Terpisah -->
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 inset-x-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 transition-colors">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-2.5 group">
+                <div class="w-9 h-9 rounded-xl bg-sky-600 text-white flex items-center justify-center font-mono font-bold text-base shadow-sm group-hover:bg-sky-500 transition">
+                    &lt;/&gt;
+                </div>
+                <span class="font-bold text-lg tracking-tight text-slate-900 dark:text-white">Alief<span class="text-sky-600 dark:text-sky-400">Dev</span></span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+                <a href="#home" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Beranda</a>
+                <a href="#about" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Tentang</a>
+                <a href="#skills" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Keahlian</a>
+                <a href="#projects" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Proyek</a>
+                <a href="#contact" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Kontak</a>
+            </nav>
+
+            <div class="flex items-center gap-2.5">
+                <button onclick="toggleTheme()" id="theme-toggle" class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100/70 dark:bg-slate-800 text-slate-600 dark:text-amber-400 flex items-center justify-center hover:bg-slate-200/70 dark:hover:bg-slate-700 transition" title="Ubah Tema">
+                    <i class="fa-solid fa-moon" id="theme-icon"></i>
+                </button>
+                <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-700 text-white text-xs sm:text-sm font-semibold shadow-sm transition">
+                    <span>Rekrut Saya</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+                <button onclick="toggleMobileMenu()" class="md:hidden w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-200">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 py-4 space-y-2.5">
+            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium hover:text-sky-600">Beranda</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium hover:text-sky-600">Tentang</a>
+            <a href="#skills" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium hover:text-sky-600">Keahlian</a>
+            <a href="#projects" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium hover:text-sky-600">Proyek</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium hover:text-sky-600">Kontak</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-28 pb-20 sm:pt-36 sm:pb-28 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 dark:bg-sky-950/70 border border-sky-200 dark:border-sky-800 text-sky-700 dark:text-sky-300 text-xs font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Tersedia untuk Proyek Freelance & Full-Time</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+                    Membangun Pengalaman Web yang <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-indigo-600 dark:from-sky-400 dark:to-indigo-400">Cepat & Elegan</span>
+                </h1>
+                <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    Halo! Saya <strong class="text-slate-900 dark:text-white">M Alief Riffkan</strong>, seorang Full-Stack Web Developer & UI/UX Enthusiast yang berfokus menciptakan aplikasi web modern, responsif, dan berorientasi pada pengguna.
+                </p>
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+                    <a href="#projects" class="px-6 py-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold text-sm shadow-md shadow-sky-600/20 transition flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span>Lihat Karya Saya</span>
+                    </a>
+                    <a href="#contact" class="px-6 py-3 rounded-xl bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700 font-semibold text-sm transition flex items-center gap-2">
+                        <i class="fa-regular fa-paper-plane"></i>
+                        <span>Hubungi Saya</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-72 h-72 sm:w-80 sm:h-80">
+                    <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-sky-500 to-indigo-500 rotate-6 opacity-20 blur-xl"></div>
+                    <div class="relative w-full h-full rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 shadow-xl flex flex-col justify-between">
+                        <img src="https://placehold.co/500x420/0284c7/ffffff?text=Foto+Profil+Anda" alt="Foto Profil" class="w-full h-48 sm:h-52 object-cover rounded-2xl">
+                        <div class="flex items-center justify-between pt-3 px-1">
+                            <div>
+                                <div class="font-bold text-sm text-slate-900 dark:text-white">M Alief Riffkan</div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400">Full-Stack Web Developer</div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-xs font-mono font-semibold border border-emerald-200 dark:border-emerald-800">
+                                1+ Thn Pengalaman
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white dark:bg-slate-900/60 border-y border-slate-200/70 dark:border-slate-800/80 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+                <div>
+                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Portofolio Pilihan</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Proyek Terbaru Saya</h2>
+                </div>
+                <div class="inline-flex flex-wrap gap-2 bg-slate-100 dark:bg-slate-800 p-1.5 rounded-xl">
+                    <button onclick="filterProjects('ALL')" id="filter-ALL" class="proj-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-900 text-sky-600 dark:text-sky-400 shadow-xs transition">Semua</button>
+                    <button onclick="filterProjects('WEB')" id="filter-WEB" class="proj-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-sky-600 transition">Web App</button>
+                    <button onclick="filterProjects('UIUX')" id="filter-UIUX" class="proj-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-sky-600 transition">UI/UX Design</button>
+                    <button onclick="filterProjects('SYSTEM')" id="filter-SYSTEM" class="proj-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-sky-600 transition">Sistem Informasi</button>
+                </div>
+            </div>
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <div class="lg:col-span-5 space-y-5">
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Kontak</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Mari Berkolaborasi Bersama!</h2>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Punya ide proyek atau ingin berdiskusi seputar pengembangan aplikasi? Jangan ragu untuk mengirim pesan.
+                </p>
+                <div class="text-sm font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                    <span>Email: maliefriffkan@gmail.com</span>
+                    <button onclick="copyEmail()" class="text-xs text-sky-600 hover:underline">(Salin)</button>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7">
+                <form onsubmit="handleContactSubmit(event)" class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-4">
+                    <input type="text" id="contact-name" required placeholder="Nama Lengkap" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm">
+                    <input type="email" id="contact-email" required placeholder="Alamat Email" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm">
+                    <textarea id="contact-message" rows="4" required placeholder="Pesan Anda..." class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm"></textarea>
+                    <button type="submit" class="w-full py-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold text-sm transition">
+                        Kirim Pesan Sekarang
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-lg w-full border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden">
+            <img id="modal-proj-img" src="" alt="Preview Proyek" class="w-full h-52 object-cover">
+            <div class="p-6 space-y-4">
+                <div class="flex items-start justify-between gap-2">
+                    <div>
+                        <span id="modal-proj-cat" class="text-[11px] font-mono font-bold uppercase text-sky-600 dark:text-sky-400">WEB APP</span>
+                        <h3 id="modal-proj-title" class="text-xl font-bold text-slate-900 dark:text-white mt-0.5">Judul Proyek</h3>
+                    </div>
+                    <button onclick="closeProjectModal()" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 flex items-center justify-center">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <p id="modal-proj-desc" class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed"></p>
+                <div id="modal-proj-tags" class="flex flex-wrap gap-1.5"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-lg border border-slate-700 flex items-center gap-2.5 text-xs sm:text-sm transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toast-msg">Notifikasi</span>
+    </div>
+
+    <!-- File JavaScript Terpisah -->
+    <script src="script.js"></script>
+</body>
+</html>
